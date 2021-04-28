@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 
 from sklearn.preprocessing import StandardScaler
 
-dataset = pd.read_csv("./Data/Data.csv")
+dataset = pd.read_csv("../Data/Data.csv")
 X = dataset.iloc[:,:-1] #Selecting all but the last columns of the dataset
 Y = dataset.iloc[:,-1] #Selecting the last column of the dataset
 
