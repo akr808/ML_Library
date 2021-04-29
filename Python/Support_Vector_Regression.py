@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)" 
+ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
 Topic: Support Vector Regression
 @author: Anand
 """
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 dataset = pd.read_csv("../Data/Position_Salaries.csv")
@@ -30,7 +29,6 @@ svr.fit(X,y)
 x_test = sc_x.transform([[6.5]])
 y_pred = svr.predict(x_test)
 y_pred = sc_y.inverse_transform(y_pred)
-               
 
 #plotting the results
 plt.scatter(sc_x.inverse_transform(X),sc_y.inverse_transform(y),color = "red")
