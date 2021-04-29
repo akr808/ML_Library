@@ -15,7 +15,7 @@ X = dataset.iloc[:,1:-1]
 y = dataset.iloc[:,-1]
 
 #Creating the Ranodom Forest Model
-rfr = RandomForestRegressor(random_state=0)
+rfr = RandomForestRegressor(n_estimators=10, random_state=0)
 rfr.fit(X, y)
 
 #Predicting using the model
