@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)" 
+ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
 Topic: Data Pre-Processing
 @author: Anand
 """
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 
 from  sklearn.impute import SimpleImputer
@@ -42,7 +41,8 @@ Y = le.fit_transform(Y)
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2, random_state=1)
 
 '''
-#Feature Scaling---applied after the slpit as otherwise there could be data leakage from the test set into the train set
+#Feature Scaling---applied after the slpit as otherwise there could be data
+leakage from the test set into the train set
 #Standardisation technique ==== (x - mean(x)) / (std dev(x))
 #Normlisation technique ==== (x - min(x)) / (max(x) - min(x))
 Standardisation is used for general data irrecpective of the nature,

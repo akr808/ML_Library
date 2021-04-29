@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)" 
+ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
 Topic: Polynomial Linear Regression
 @author: Anand
 """
@@ -8,9 +8,6 @@ Topic: Polynomial Linear Regression
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
 
 from sklearn.preprocessing import PolynomialFeatures
