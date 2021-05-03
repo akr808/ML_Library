@@ -47,8 +47,8 @@ cm = confusion_matrix(y_test, y_pred)
 #Visualising the model.
 #Visualising the training data
 X_set, y_set = sc_x.inverse_transform(X_train),y_train
-X1, X2 = np.meshgrid(np.arange(start = X_set[:,0].min() - 10, stop =X_set[:,0].max() + 10, step = 1),
-                      np.arange(start = X_set[:,1].min() - 1000, stop =X_set[:,1].max() + 1000, step = 1))
+X1, X2 = np.meshgrid(np.arange(start = X_set[:,0].min() - 10, stop =X_set[:,0].max() + 10, step = 0.25),
+                      np.arange(start = X_set[:,1].min() - 1000, stop =X_set[:,1].max() + 1000, step = 0.25))
  
 plt.contour(X1, X2, svm.predict(sc_x.transform(np.array([X1.ravel(), X2.ravel()]).T)).reshape(X1.shape), 
             alpha =0.75, cmp = ListedColormap(('red', 'green')))
@@ -64,8 +64,8 @@ plt.show()
 
 #Visualising the test data
 X_set, y_set = sc_x.inverse_transform(X_test),y_test
-X1, X2 = np.meshgrid(np.arange(start = X_set[:,0].min() - 10, stop =X_set[:,0].max() + 10, step = 1),
-                      np.arange(start = X_set[:,1].min() - 1000, stop =X_set[:,1].max() + 1000, step = 1))
+X1, X2 = np.meshgrid(np.arange(start = X_set[:,0].min() - 10, stop =X_set[:,0].max() + 10, step = 0.25),
+                      np.arange(start = X_set[:,1].min() - 1000, stop =X_set[:,1].max() + 1000, step = 0.25))
  
 plt.contour(X1, X2, svm.predict(sc_x.transform(np.array([X1.ravel(), X2.ravel()]).T)).reshape(X1.shape), 
             alpha =0.75, cmp = ListedColormap(('red', 'green')))
