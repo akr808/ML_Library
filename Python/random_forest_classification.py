@@ -31,7 +31,7 @@ X_train = sc_x.fit_transform(X_train)
 X_test = sc_x.transform(X_test)
 
 #Building the model
-rfc = RandomForestClassifier(random_state=0, n_estimators=10)
+rfc = RandomForestClassifier(random_state=0, n_estimators=10, criterion = 'entropy')
 rfc.fit(X_train,y_train)
 
 #Predict using the model
