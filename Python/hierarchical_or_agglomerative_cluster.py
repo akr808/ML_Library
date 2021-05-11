@@ -26,12 +26,12 @@ plt.show()
 
 #Building the Hierarchical clustering model
 aggCluster = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
-y_kmeans = aggCluster.fit_predict(X)
+y_hc = aggCluster.fit_predict(X)
 
 #Plotting the scatter plot
 colors = ("Green","pink","Orange","Blue","Red")
 for i in range(5):
-    rows = y_kmeans == i
+    rows = y_hc == i
     plt.scatter(X[rows,0],X[rows,1],c=colors[i], label = "Cluster " + str(i + 1))
 #plt.scatter(aggCluster.cluster_centers_[:,0],aggCluster.cluster_centers_[:,1],c='yellow',s=100)
 plt.xlabel("Annual Income")
