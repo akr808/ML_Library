@@ -25,7 +25,7 @@ plt.title("Dendrogram")
 plt.show() 
 
 #Building the Hierarchical clustering model
-aggCluster = AgglomerativeClustering(n_clusters=5)
+aggCluster = AgglomerativeClustering(n_clusters=5, affinity='euclidean', linkage='ward')
 y_kmeans = aggCluster.fit_predict(X)
 
 #Plotting the scatter plot
