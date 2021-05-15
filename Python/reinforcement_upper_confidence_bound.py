@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
-Topic: AReinforcement Learning--Upper Confidence Bound Algorithm.
+Topic: Reinforcement Learning--Upper Confidence Bound Algorithm.
 @author: Anand
 """
 
