@@ -28,11 +28,11 @@ for n in range(N):
             max_random = random_beta
             ad = i
     ads_selected.append(ad)
-    total_reward += dataset.values[n][ad]   
+    total_reward += dataset.values[n,ad]   
     if dataset.values[n][ad]  == 1:
-        number_of_rewards_1[ad] += dataset.values[n][ad] 
+        number_of_rewards_1[ad] += dataset.values[n,ad] 
     else:
-        number_of_rewards_0[ad] += dataset.values[n][ad] 
+        number_of_rewards_0[ad] += dataset.values[n,ad] 
 plt.hist(ads_selected)
 plt.title("Ad Selection Histogram")
 plt.xlabel("Ad Identifier")
