@@ -50,7 +50,7 @@ X_test = sc.transform(X_test)
 ann = tf.keras.models.Sequential()
 
 #Adding the input layers
-ann.add(tf.keras.layers.Dense(units = 12, activation = 'relu')) # 1st hidden layer
+#ann.add(tf.keras.layers.Dense(units = 12, activation = 'relu')) # 1st hidden layer
 
 #Adding the hidden layers
 ann.add(tf.keras.layers.Dense(units = 6, activation = 'relu')) # 1st hidden layer
