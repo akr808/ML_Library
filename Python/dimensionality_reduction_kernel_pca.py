@@ -34,9 +34,9 @@ X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 #Implement PCA
-pca = KernelPCA(n_components = 2, kernel="rbf")
-X_train = pca.fit_transform(X_train)
-X_test = pca.transform(X_test)
+kernel_pca = KernelPCA(n_components = 2, kernel="rbf")
+X_train = kernel_pca.fit_transform(X_train)
+X_test = kernel_pca.transform(X_test)
 
 
 
