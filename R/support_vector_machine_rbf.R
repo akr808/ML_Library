@@ -1,6 +1,6 @@
 #' 
 #' ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
-#' Topic: SVM CLassifier Non Linear(RBF)
+#' Topic: SVM Classifier Non Linear(RBF)
 #' @author: Anand
 
 #Import the dataset#
