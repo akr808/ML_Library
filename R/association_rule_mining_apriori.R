@@ -15,3 +15,7 @@ itemFrequencyPlot(dataset, topN = 100)
 
 #Building the apriori model
 rules <- apriori(data = dataset, parameter = list(support = 0.003,confidence = 0.6, minlen = 2) )
+
+
+#Visualising the results#
+inspect(sort(rules,by = 'confidence'))
