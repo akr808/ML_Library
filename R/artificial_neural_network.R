@@ -44,3 +44,4 @@ y_pred = as.data.frame(predict(classifier, newdata = as.h2o(test_set[-11])))
 y_pred$predict <- ifelse(y_pred$predict > 0.5, 1, 0)
 #Computiing the model characteristics#
 cm = table(test_set[,11], y_pred$predict)
+h2o.shutdown()
