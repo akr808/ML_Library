@@ -1,6 +1,6 @@
 #' 
 #' ML Lab for the udemy course "Machine Learning A-Z (Codes and Datasets)"
-#' Topic: Dimensionality Reduction--Kernel PCA
+#' Topic: Dimensionality Reduction--LDA
 #' @author: Anand
 
 
@@ -19,18 +19,15 @@ test_set = subset(dataset, split == FALSE)
 training_set[,-14] = scale(training_set[,-14])
 test_set[,-14] = scale(test_set[,-14])
 
-#Applying Kernel PCA to the data#
-library(kernlab)
-kpca <- kpca(~., data = training_set[-3], kernel = 'rbfdot', features = 2)
-training_set_pca = as.data.frame(predict(kpca, training_set))
-training_set_pca[3] = training_set$Customer_Segment
-colnames(training_set_pca) <- c("PC1", "PC2", "Customer_Segment")
-training_set <- training_set_pca
-test_set_pca = as.data.frame(predict(kpca, test_set))
-test_set_pca[3] = test_set$Customer_Segment
-colnames(test_set_pca) <- c("PC1", "PC2", "Customer_Segment")
-test_set <- test_set_pca
-
+#Applying LDA to the data#
+library(MASS)
+lda <- lda(formula = Customer_Segment ~ ., data = training_set)
+training_set = as.data.frame(predict(lda, training_set))
+training_set = training_set[c(5,6,1)]
+colnames(training_set) <- c("PC1", "PC2", "Customer_Segment")
+test_set = as.data.frame(predict(lda, test_set))
+test_set = test_set[c(5,6,1)]
+colnames(test_set) <- c("PC1", "PC2", "Customer_Segment")
 
 #Logistic Regression Classifier#
 classifier = svm(formula = Customer_Segment ~ ., family = binomial, 
@@ -48,7 +45,7 @@ cm = table(test_set[,3], y_pred)
 y_pred = data.frame(actual = test_set$Purchased, predicted = ifelse(prob_pred > 0.5, 1, 0))
 
 
-
+#Visualising the results#
 #Visualising the results#
 # Visualising the Training set results
 library(ElemStatLearn)
