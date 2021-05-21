@@ -44,7 +44,7 @@ cm = table(test_set[,3], y_pred)
 y_pred = data.frame(actual = test_set$Purchased, predicted = ifelse(prob_pred > 0.5, 1, 0))
 
 
-#Visualising the results#
+
 #Visualising the results#
 # Visualising the Training set results
 library(ElemStatLearn)
