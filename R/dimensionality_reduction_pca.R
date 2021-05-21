@@ -33,6 +33,7 @@ test_set <- test_set_pca
 
 
 #Logistic Regression Classifier#
+library(e1071)
 classifier = svm(formula = Customer_Segment ~ ., family = binomial, 
                  data = training_set,
                  type = 'C-classification', 
